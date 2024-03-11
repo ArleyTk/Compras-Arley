@@ -1,0 +1,246 @@
+.botonsito {
+    display: flex;
+    margin-left: auto;
+    padding: 50px 50px;
+  }
+
+.botonRojo {
+    background-color: #E12424;
+    color: white;
+    height: 50px;
+    width: 180px;
+    margin-left: 20%;
+    margin-bottom: 20px;
+}
+
+.botonMorado {
+    background-color: #722F37;
+    color: white;
+    height: 50px;
+    width: 180px;
+    margin-left: 20%;
+    margin-bottom: 20px;
+}
+
+#tabla-contenedor {
+    width: 300px;
+    max-height: 200px;
+    /* Altura máxima deseada */
+    overflow: hidden;
+    /* Oculta el desbordamiento */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 20px auto;
+    margin-top: 0;
+    margin-right: 100px;
+}
+
+#tablita {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    /* Fijar el ancho de la tabla */
+}
+
+#tablita thead th {
+    background-color: #E12424;
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+}
+
+#tablita tbody {
+    max-height: 160px;
+    /* Altura máxima deseada para el tbody */
+    display: block;
+    /* Establece un contexto de bloque para el tbody */
+    overflow-y: scroll;
+    /* Habilita la barra de desplazamiento en el tbody */
+}
+
+#tablita tbody td {
+    width: 1%;
+    padding: 10px;
+    border-top: 1px solid #f2f2f2;
+
+}
+
+.checkbox {
+    margin-right: 10px;
+}
+
+
+.cajaBotones {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.cajaBotones button {
+    padding: 10px 40px;
+    /* Ajusta el padding para hacer los botones más largos */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 20%;
+    /* Ajusta el ancho de los botones */
+}
+
+#guardar {
+    background-color: #48110d;
+    color: white;
+}
+
+#cancelar {
+    background-color: #E12424;
+    color: white;
+}
+
+
+.espacioEntreBotones {
+    width: 40px;
+    /* Ajusta el ancho del espacio según tus preferencias */
+}
+
+.gris {
+    color: #6d6d6d;
+}
+
+.parrafoGris {
+    color: gray;
+}
+
+input {
+    border-radius: 3px;
+    border: 1px solid #6d6d6d;
+}
+
+.input1 input {
+    padding-left: 10px;
+    width: 300px;
+    height: 50px;
+}
+
+
+.input1 i {
+    font-size: 20px;
+}
+
+.divImagen {
+    border-radius: 10px;
+    border: 1px solid #6d6d6d;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.contenido2 {
+    border-radius: 3px;
+    border: 1px solid #b9b9b9;
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: #f8f8f8;
+}
+
+#_id {
+    background-color: #ccc;
+}
+
+
+.rojo {
+    background: #E12424;
+    color: white;
+
+}
+
+.rojo:hover {
+    background: #f33928;
+}
+
+.rojo:active {
+    box-shadow: 1px 1px 1px 1px #f33928;
+}
+
+.vinotinto {
+    background: #48110d;
+    color: white;
+}
+
+.vinotinto:hover {
+    background: #771d17;
+
+}
+
+.vinotinto:active {
+    box-shadow: 1px 1px 1px 1px #771d17;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-left: 50px;
+}
+
+.icon {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.key-icon::before {
+    content: "\f084";
+    /* Unicode for key icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+.user-icon::before {
+    content: "\f007";
+    /* Unicode for user icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+.input-field {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 400px;
+
+}
+
+#contenedorsitos {
+    display: flex;
+}
+
+#contenedorsito {
+    margin-top: -50px;
+
+}
+
+#cosas {
+    margin-left: 60px;
+}
+
+.contIzquierdaAbajo {
+    margin-top: -35px;
+}
+
+.invalid {
+    border: 1px solid #E12424;
+    box-shadow: 0 0 1px red;
+    outline: none;
+}
+
+.error {
+    color: #E12424;
+    display: block;
+    font-size: 12px;
+
+}
+
+label {
+    display: block;
+    /* Hace que el label sea un elemento en bloque para que aparezca por encima del input */
+    margin-bottom: 10px;
+    /* Agrega un margen inferior para separar el label del input */
+}

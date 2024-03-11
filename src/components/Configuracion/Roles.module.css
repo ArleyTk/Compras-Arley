@@ -1,0 +1,376 @@
+.iconosRojos {
+  color: #E12424;
+}
+
+
+.botonRojo {
+  background-color: #E12424;
+  color: white;
+  height: 50px;
+  width: 180px;
+  margin-left: 20%;
+  margin-bottom: 20px;
+}
+
+/* Ajuste para el icono de búsqueda en el campo vacío */
+
+
+
+
+.boton-morado {
+  background-color: #E12424;
+  color: white;
+
+}
+
+
+
+
+#contenedorcito {
+  display: flex;
+  justify-content: center;
+
+
+}
+
+
+#kaka {
+  display: flex;
+  flex-direction: column;
+
+
+}
+
+.containerx {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.iconx {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.lightbulb-icon::before {
+  content: "\f0eb";
+  /* Unicode for lightbulb icon */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.checkbox-label input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+
+
+
+
+
+table {
+  border-collapse: collapse;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 20px auto;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  padding: 10px;
+  text-align: left;
+}
+
+td {
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.checkbox {
+  margin-right: 10px;
+}
+
+#fondotabla {
+  background-color: #E12424;
+  display: flex;
+  justify-content: center;
+  font-style: #E12424;
+}
+
+
+
+.input-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+
+}
+
+.icon {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.key-icon::before {
+  content: "\f084";
+  /* Unicode for key icon */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.user-icon::before {
+  content: "\f007";
+  /* Unicode for user icon */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.input-field {
+  padding: 15px;
+  border-radius: 5px;
+  width: 350px;
+  padding: 10px;
+  border: 1px solid #ccc;
+
+}
+
+.input-field2 {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 350px;
+  /* Cambia este valor para ajustar el ancho del input */
+  padding: 10px;
+
+  display: flex;
+  justify-content: end;
+
+}
+
+.input-field3 {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 760px;
+  /* Cambia este valor para ajustar el ancho del input */
+  padding: 10px;
+
+  display: flex;
+  justify-content: end;
+  align-items: center;
+
+
+}
+
+
+
+
+#seleccionarpermisos {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+
+#botonfinal {
+  position: absolute;
+  padding: 12px 40px;
+  font-size: 16px;
+  margin-left: 100px;
+
+}
+
+
+#botonfinal2 {
+  position: absolute;
+  padding: 12px 40px;
+  font-size: 16px;
+  margin-right: 300px;
+
+}
+
+
+.espacio {
+  width: 88px;
+}
+
+
+
+.cajaBotones {
+  display: flex;
+  justify-content: center;
+}
+
+.cajaBotones button {
+  padding: 10px 40px;
+  /* Ajusta el padding para hacer los botones más largos */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 30%;
+  /* Ajusta el ancho de los botones */
+}
+
+
+
+
+.espacioEntreBotones {
+  width: 40px;
+  /* Ajusta el ancho del espacio según tus preferencias */
+}
+
+#kaka {
+  margin-right: 60px;
+
+}
+
+#contenedorregistroroles {
+  display: flex;
+}
+
+#contenedorregistroroles {
+  margin-left: 270px;
+  margin-top: -50px;
+}
+
+#contenedorsitos {
+  display: flex;
+
+
+}
+
+#contenedorsito {
+  display: flex;
+  justify-content: center; /* Centra los elementos hijos horizontalmente */
+  align-items: center; /* Centra los elementos hijos verticalmente */
+  flex-direction: column; /* Establece la disposición de los elementos hijos en columnas */
+}
+
+
+.contenido2 {
+  border-radius: 3px;
+
+  margin-left: 200px;
+  margin-right: 200px;
+
+  background-color: #f2f2f2;
+  border: 1px solid #b9b9b9;
+  border-radius: 10px;
+  background-color: #f8f8f8;
+}
+
+
+
+.rojo {
+  background: #E12424;
+  color: white;
+  display: flex;
+  justify-content: center;
+
+}
+
+.rojo:hover {
+  background: #f33928;
+}
+
+.rojo:active {
+  box-shadow: 1px 1px 1px 1px #f33928;
+}
+
+.vinotinto {
+  background: #48110d;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.vinotinto:hover {
+  background: #771d17;
+
+}
+
+.vinotinto:active {
+  box-shadow: 1px 1px 1px 1px #771d17;
+}
+
+
+/* #bordegris{
+  position:absolute;
+  border: 1px solid #b9b9b9;
+  width: 500px;
+  height: 660px;
+  margin-left: 225px;
+  margin-top: -60px;
+} */
+
+
+.fa-message {
+  margin-left: -160px;
+}
+
+.fa-font {
+  margin-left: -160px;
+}
+
+.key-icon {
+  margin-left: -160px;
+}
+
+#textito {
+  margin-bottom: 4px;
+}
+
+#tabla-contenedor {
+  width: 300px;
+  max-height: 200px;
+  /* Altura máxima deseada */
+  overflow: hidden;
+  /* Oculta el desbordamiento */
+
+  border-radius: 5px;
+  margin: 20px auto;
+
+}
+
+#tablita {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  /* Fijar el ancho de la tabla */
+}
+
+#tablita thead th {
+  background-color: #E12424;
+  font-weight: bold;
+  padding: 10px;
+  text-align: left;
+}
+
+#tablita tbody {
+  max-height: 125px;
+  /* Altura máxima deseada para el tbody */
+  display: block;
+  /* Establece un contexto de bloque para el tbody */
+  overflow-y: scroll;
+  /* Habilita la barra de desplazamiento en el tbody */
+  background-color: rgb(255, 255, 255);
+}
+
+#tablita tbody td {
+  width: 1%;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+
+}
+
+
+.tablitaMarginRight {
+  margin-right: 142px;
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/Menu.css">
+  <link rel="stylesheet" href="css/gestionDeClientes.css">
+  <!-- Incluye la biblioteca de Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Incluye la biblioteca de Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>LuchoSoft</title>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+
+<body onload="cargarDatos()">
+  <div class="barraPrincipal">
+    <div class="contenedor_1">
+
+      <div class="imagen">
+        <img src="archivos/imagenes/LuchoGod.png" height="45px" lenght="45px">
+      </div>
+
+      <div class="centrar">
+        <p>LuchoSoft</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="contenedor">
+    <div class="barraLateral">
+      <center>
+        <h3>Menú</h3>
+      </center>
+      <div class="sidebar">
+        <div class="module">
+          <p class="module-heading">Configuración <i class="bi bi-chevron-down arrow-icon"></i>
+            <!-- Flecha hacia abajo --></p>
+          <ul class="options">
+            <li onclick="window.location.href='gestionroles.html'">Roles</li>
+
+          </ul>
+        </div>
+        <div class="module">
+          <p class="module-heading">Usuarios <i class="bi bi-chevron-down arrow-icon"></i> <!-- Flecha hacia abajo -->
+          </p>
+          <ul class="options">
+            <li onclick="window.location.href='gestionUsuario.html'">Usuarios</li>
+            <li onclick="window.location.href='accso.html'">Acceso</li>
+          </ul>
+        </div>
+        <div class="module">
+          <p class="module-heading">Compras <i class="bi bi-chevron-down arrow-icon"></i> <!-- Flecha hacia abajo -->
+          </p>
+          <ul class="options">
+            <li onclick="window.location.href='CategoriaInsumos.html';">Categoria de insumos</li>
+            <li onclick="window.location.href='Insumos.html';">Insumos</li>
+            <li onclick="window.location.href='gestionProveedores.html'">Proveedores</li>
+            <li onclick="window.location.href='gestionCompras.html'">Compras</li>
+          </ul>
+        </div>
+        <div class="module">
+          <p class="module-heading">Producción <i class="bi bi-chevron-down arrow-icon"></i> <!-- Flecha hacia abajo -->
+          </p>
+          <ul class="options">
+            <li onclick="window.location.href='OrdenProduccion.html'">Orden de producción</li>
+          </ul>
+        </div>
+        <div class="module">
+          <p class="module-heading">Ventas <i class="bi bi-chevron-down arrow-icon"></i> <!-- Flecha hacia abajo --></p>
+          <ul class="options">
+            <li onclick="window.location.href='categoriaProductos.html'">Categoria de productos</li>
+            <li onclick="window.location.href='gestionProductos.html'">Productos</li>
+            <li onclick="window.location.href='Clientes.html';">Clientes</li>
+            <li onclick="window.location.href='pedidos.html'">Pedidos</li>
+            <li onclick="window.location.href='Ventas.html'">Ventas</li>
+          </ul>
+        </div>
+        <div class="usuario" onclick="window.location.href='Inicio.html'">
+          <a class="usuario-link">
+            <img src="archivos/imagenes/Profile.png" alt="">
+            <span id="spanIcono">Nombre de Usuario</span>
+          </a>
+        </div>
+
+
+      </div>
+    </div>
+    <div class="contenido">
+      <div class="contenido2">
+        <br>
+        <center>
+          <h3>Modificar Cliente</h3>
+        </center>
+        <br>
+        <div class="contForms">
+          <div class="input1">
+            <p class="parrafoGris"><i class="fa-solid fa-key iconosRojos"></i> ID del cliente</p>
+            <input id="id_cliente" class="input-field gris" type="text" placeholder="" readonly>
+          </div>
+          <br>
+          <div class="input1">
+            <p><i class="fa-solid fa-font iconosRojos"></i> Nombre del cliente</p>
+            <input id="nombre_cliente" class="input-field" type="text" placeholder="Ingrese el nombre">
+          </div>
+          <br>
+          <div class="input1">
+            <p><i class="fa-solid fa-phone iconosRojos"></i> Telefono del cliente</p>
+            <input id="telefono_cliente" class="input-field" type="text" placeholder="Ingrese el telefono">
+          </div>
+          <br>
+          <div class="input1">
+            <p><i class="fa-sharp fa-solid fa-location-dot iconosRojos"></i> Dirección del cliente</p>
+            <input id="direccion_cliente" class="input-field" type="text" placeholder="Ingrese la dirección">
+          </div>
+          <br>
+        </div>
+  
+        <center>
+          <div class="cajaBotones">
+            <button onclick="validarCamposModificar()" id="guardar" type="submit">Guardar</button>
+            <div class="espacioEntreBotones"></div>
+            <button id="cancelar" type="button" onclick="window.location.href='Clientes.html'">Cancelar</button>
+          </div>
+        </center>
+        <br>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Función para obtener el ID del cliente de la URL
+    function obtenerIDClienteDesdeURL() {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get('id_cliente');
+    }
+
+    // Obtener el ID del cliente de la URL
+    const idCliente = obtenerIDClienteDesdeURL();
+
+    function cargarDatos () {
+      consultarClientes(idCliente);
+    }
+  </script>
+
+
+  <script src="js/gestionDeClientes.js"></script>
+  <script src="js/Menu.js"></script>
+
+</html>
+
+</body>
+
+</html>
