@@ -4,12 +4,15 @@ import { Outlet, Link } from "react-router-dom";
 import { Table, Pagination } from 'react-bootstrap';
 
 
+
 function App() {
+  
   let IDCOMPRADETALLLE = 0;
   const [insumos, setInsumos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   const [searchTerm, setSearchTerm] = useState('');
+  
 
   const [compra, setCompra] = useState({
     id_compra: '',
@@ -304,11 +307,13 @@ function App() {
                 </div>
               </div>
               <center>
+                <br />
               <input
                 type="text"
-                placeholder="Buscar insumo..."
+                placeholder=" Buscar insumo..."
                 value={searchTerm}
                 name="search"
+                style={{borderRadius: "30px", marginRight: "590px"}}
                 onChange={handleInputChange}
               />
               </center>

@@ -4,6 +4,7 @@ import 'datatables.net-bs5';
 import './registroCompras.css';
 import { Link } from "react-router-dom";
 
+
 function TablaCompras() {
   const [compras, setCompras] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -18,6 +19,34 @@ function TablaCompras() {
       setIsLoading(false);
     }
   }, [compras]);
+
+  const handleEstadoCompra = async (idCompra, estadoCompra, compra) => {
+    try {
+      const nuevoEstadoCompra = estadoCompra === 1 ? 2 : 1;
+      const response = await fetch(`http://localhost:8082/compras/compras/${idCompra}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          ...compra, // Mantener todos los datos de la compra
+          estado_compra: nuevoEstadoCompra // Cambiar solo el estado de la compra
+        })
+      });
+  
+      if (response.ok) {
+        // Actualización exitosa, actualizar la lista de compras
+        fetchCompras();
+      } else {
+        console.error('Error al actualizar el estado de la compra');
+      }
+    } catch (error) {
+      console.error('Error al actualizar el estado de la compra:', error);
+    }
+  };
+  
+  
+  
 
   useLayoutEffect(() => {
     if (tableRef.current && !isLoading) {
@@ -39,7 +68,7 @@ function TablaCompras() {
             next: '>',
             last: '>>',
           },
-          search: 'Buscar'
+          search: ''
         },
         initComplete: function () {
           $('.data-table-filter input').css({
@@ -48,12 +77,16 @@ function TablaCompras() {
             'height': '30px',
             'font-size': '14px',
             'margin-right': '600px',
-          });
+            'border-radius': '50px',
+            'padding-left': '30px' // Espacio para el icono
+          }).before('<i class="fa fa-search" style="position: relative; left: 10px; top: 50%; transform: translateY(180%);"></i>');
+          // Ajustamos la posición del icono para que quede alineado verticalmente
           $('.dataTables_length').hide();
         }
       });
     }
   }, [compras, isLoading]);
+  
 
   const fetchCompras = async () => {
     try {
@@ -72,7 +105,7 @@ function TablaCompras() {
   const handleDeleteCompra = async (idCompra) => {
     if (window.confirm('¿Estás seguro de que quieres eliminar esta compra?')) {
       try {
-        const response = await fetch(`http://localhost:4000/luchosoft/compras/${idCompra}`, {
+        const response = await fetch(`http://localhost:8082/compras/compras/${idCompra}`, {
           method: 'DELETE'
         });
 
@@ -106,7 +139,7 @@ function TablaCompras() {
               <h1 id= "titulo">Gestión de Compras</h1>
             </div>
           </center>
-          <div class="botones">
+          <div className="botones">
             <Link to={'/registrarCompra'}>
               <button className="boton rojovivo" id="botonagr"> <i className=".fa-solid fa-plus"></i> Agregar</button>
             </Link>
@@ -126,27 +159,35 @@ function TablaCompras() {
                   <th> <i className={["fa-solid fa-coins iconosRojos"]}></i> Total</th>
                   <th> <i className={["fa-solid fa-user iconosRojos"]}></i> ID Proveedor</th>
                   <th> <i className={["fa-solid fa-lightbulb iconosRojos"]}></i> Estado</th>
-                  <th> <i className={["fa-solid fa-hand-middle-finger iconosRojos"]}></i> Funciones</th>
+                  <th> <i className={["fa-solid fa-gear iconosRojos"]}></i> Funciones</th>
                 </tr>
               </thead>
               <tbody>
-                {compras.map(compra => (
-                  <tr key={compra.id_compra} style={{ backgroundColor: "white", color: "black" }}>
-                    <td>{compra.id_compra}</td>
-                    <td>{compra.nombre_compra}</td>
-                    <td>{compra.fecha_compra}</td>
-                    <td>{compra.total_compra}</td>
-                    <td>{compra.id_proveedor}</td>
-                    <td>{compra.estado_compra}</td>
-                    <td>
-                      <center>
-                        <button className="boton" style={{ backgroundColor: "white" }} onClick={() => handleDeleteCompra(compra.id_compra)}>
-                          <i className="fas fa-trash iconosRojos"></i>
-                        </button>
-                      </center>
-                    </td>
-                  </tr>
-                ))}
+              {compras.map(compra => (
+  <tr key={compra.id_compra} style={{ backgroundColor: "white", color: "black" }}>
+    <td style={{textAlign: 'center'}}>{compra.id_compra}</td>
+    <td style={{textAlign: 'center'}}>{compra.nombre_compra}</td>
+    <td style={{textAlign: 'center'}}>{compra.fecha_compra}</td>
+    <td style={{textAlign: 'center'}}>{compra.total_compra}</td>
+    <td style={{textAlign: 'center'}}>{compra.id_proveedor}</td>
+    <td onClick={() => handleEstadoCompra(compra.id_compra, compra.estado_compra, compra)} style={{ cursor: 'pointer', textAlign: 'center', fontSize: '24px' }}>
+  {compra.estado_compra === 1 ? (
+    <i className="bi bi-toggle-on" style={{ color: "green" }}></i>
+  ) : (
+    <i className="bi bi-toggle-off" style={{ color: "red" }}></i>
+  )}
+</td>
+
+    <td>
+      <center>
+        <button className="boton" style={{ backgroundColor: "white" }} onClick={() => handleDeleteCompra(compra.id_compra)}>
+          <i className="fas fa-trash iconosRojos"></i>
+        </button>
+      </center>
+    </td>
+  </tr>
+))}
+
               </tbody>
             </table>
           </div>
