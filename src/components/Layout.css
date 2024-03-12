@@ -7,6 +7,7 @@
 
 #luchosoft{
   margin-left: 8px;
+  color: black
 }
 
 .centrar {
@@ -22,10 +23,10 @@
 
 
 .barraPrincipal {
-  background-color: #E12424;
+  background-color: #f1f1f16e;
   color: rgb(255, 255, 255);
   border-right: 1;
-  border: 1px solid #000000;
+  border: 1px solid #d3d3d3;
 }
 
 .contenedor {
@@ -39,6 +40,7 @@
   padding: 20px;
   border-top: 10mm chocolate;
   border-right: 1px solid #6d6d6d;
+  background-color: #f1f1f16e;
   /* Agregar un borde derecho */
 }
 

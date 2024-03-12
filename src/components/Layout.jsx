@@ -34,9 +34,7 @@ const Layout = () => {
 
             <div className="contenedor">
                 <div className="barraLateral">
-                    <center>
-                        <h2>Menú</h2>
-                    </center>
+
                     <div className="sidebar">
                         <div className="module">
                             <p className={`module-heading ${selectedModule === "Configuración" ? "selected" : ""}`} onClick={() => handleModuleClick("Configuración")}>

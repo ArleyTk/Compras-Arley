@@ -33,7 +33,7 @@ function TablaCompras() {
           estado_compra: nuevoEstadoCompra // Cambiar solo el estado de la compra
         })
       });
-  
+
       if (response.ok) {
         // Actualización exitosa, actualizar la lista de compras
         fetchCompras();
@@ -44,9 +44,9 @@ function TablaCompras() {
       console.error('Error al actualizar el estado de la compra:', error);
     }
   };
-  
-  
-  
+
+
+
 
   useLayoutEffect(() => {
     if (tableRef.current && !isLoading) {
@@ -78,15 +78,15 @@ function TablaCompras() {
             'font-size': '14px',
             'margin-right': '600px',
             'border-radius': '50px',
-            'padding-left': '30px' // Espacio para el icono
-          }).before('<i class="fa fa-search" style="position: relative; left: 10px; top: 50%; transform: translateY(180%);"></i>');
+            'padding-left': '30px', // Espacio para el icono
+          }).before('<i class="fa fa-search" style="position: relative; left: 10px; top: 20%; transform: translateY(180%);"></i>');
           // Ajustamos la posición del icono para que quede alineado verticalmente
           $('.dataTables_length').hide();
         }
       });
     }
   }, [compras, isLoading]);
-  
+
 
   const fetchCompras = async () => {
     try {
@@ -132,69 +132,63 @@ function TablaCompras() {
       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
       <link href="https://cdn.datatables.net/2.0.2/css/dataTables.semanticui.css" rel="stylesheet" />
       <link href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.2/semantic.min.css" rel="stylesheet" />
-      <div className="contenedor">
-        <div className="contenido">
-          <center>
-            <div id="titulo">
-              <h1 id= "titulo">Gestión de Compras</h1>
-            </div>
-          </center>
-          <div className="botones">
-            <Link to={'/registrarCompra'}>
-              <button className="boton rojovivo" id="botonagr"> <i className=".fa-solid fa-plus"></i> Agregar</button>
-            </Link>
-            <button className="boton vinotintov2"><i className="fa-solid fa-file-pdf" ></i> Generar reporte</button>
-
-          </div>
-          <br />
-          <br />
-          <br />
-          <div className="tabla">
-            <table className="display" style={{ width: "100%" }} ref={tableRef}>
-              <thead style={{ backgroundColor: "red" }}>
-                <tr>
-                  <th><i className={["fa-solid fa-key iconosRojos"]}></i> ID</th>
-                  <th> <i className={["fa-solid fa-font iconosRojos"]}></i> Nombre</th>
-                  <th> <i className={["fa-solid fa-calendar-days iconosRojos"]}></i> Fecha</th>
-                  <th> <i className={["fa-solid fa-coins iconosRojos"]}></i> Total</th>
-                  <th> <i className={["fa-solid fa-user iconosRojos"]}></i> ID Proveedor</th>
-                  <th> <i className={["fa-solid fa-lightbulb iconosRojos"]}></i> Estado</th>
-                  <th> <i className={["fa-solid fa-gear iconosRojos"]}></i> Funciones</th>
-                </tr>
-              </thead>
-              <tbody>
-              {compras.map(compra => (
-  <tr key={compra.id_compra} style={{ backgroundColor: "white", color: "black" }}>
-    <td style={{textAlign: 'center'}}>{compra.id_compra}</td>
-    <td style={{textAlign: 'center'}}>{compra.nombre_compra}</td>
-    <td style={{textAlign: 'center'}}>{compra.fecha_compra}</td>
-    <td style={{textAlign: 'center'}}>{compra.total_compra}</td>
-    <td style={{textAlign: 'center'}}>{compra.id_proveedor}</td>
-    <td onClick={() => handleEstadoCompra(compra.id_compra, compra.estado_compra, compra)} style={{ cursor: 'pointer', textAlign: 'center', fontSize: '24px' }}>
-  {compra.estado_compra === 1 ? (
-    <i className="bi bi-toggle-on" style={{ color: "green" }}></i>
-  ) : (
-    <i className="bi bi-toggle-off" style={{ color: "red" }}></i>
-  )}
-</td>
-
-    <td>
-      <center>
-        <button className="boton" style={{ backgroundColor: "white" }} onClick={() => handleDeleteCompra(compra.id_compra)}>
-          <i className="fas fa-trash iconosRojos"></i>
-        </button>
-      </center>
-    </td>
-  </tr>
-))}
-
-              </tbody>
-            </table>
-          </div>
+      <div className='inicio'>
+        <h1 id="titulo">Compras</h1>
+        <div className="botones">
+          <Link to={'/registrarCompra'}>
+            <button className="boton rojovivo" id="botonagr"> <i className=".fa-solid fa-plus"></i> Agregar</button>
+          </Link>
+          <button className="boton vinotintov2"><i className="fa-solid fa-file-pdf" ></i> Generar reporte</button>
 
         </div>
-
       </div>
+
+        <div className="tabla">
+          <table className="display" style={{ width: "100%" }} ref={tableRef}>
+            <thead style={{ backgroundColor: "red" }}>
+              <tr>
+                <th><i className={["fa-solid fa-key iconosRojos"]}></i> ID</th>
+                <th> <i className={["fa-solid fa-font iconosRojos"]}></i> Nombre</th>
+                <th> <i className={["fa-solid fa-calendar-days iconosRojos"]}></i> Fecha</th>
+                <th> <i className={["fa-solid fa-coins iconosRojos"]}></i> Total</th>
+                <th> <i className={["fa-solid fa-user iconosRojos"]}></i> ID Proveedor</th>
+                <th> <i className={["fa-solid fa-lightbulb iconosRojos"]}></i> Estado</th>
+                <th> <i className={["fa-solid fa-gear iconosRojos"]}></i> Funciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              {compras.map(compra => (
+                <tr key={compra.id_compra} style={{ backgroundColor: "white", color: "black" }}>
+                  <td style={{ textAlign: 'center' }}>{compra.id_compra}</td>
+                  <td style={{ textAlign: 'center' }}>{compra.nombre_compra}</td>
+                  <td style={{ textAlign: 'center' }}>{compra.fecha_compra}</td>
+                  <td style={{ textAlign: 'center' }}>{compra.total_compra}</td>
+                  <td style={{ textAlign: 'center' }}>{compra.id_proveedor}</td>
+                  <td onClick={() => handleEstadoCompra(compra.id_compra, compra.estado_compra, compra)} style={{ cursor: 'pointer', textAlign: 'center', fontSize: '24px' }}>
+                    {compra.estado_compra === 1 ? (
+                      <i className="bi bi-toggle-on" style={{ color: "green" }}></i>
+                    ) : (
+                      <i className="bi bi-toggle-off" style={{ color: "red" }}></i>
+                    )}
+                  </td>
+
+                  <td>
+                    <center>
+                      <button className="boton" style={{ backgroundColor: "white" }} onClick={() => handleDeleteCompra(compra.id_compra)}>
+                        <i className="fas fa-trash iconosRojos"></i>
+                      </button>
+                    </center>
+                  </td>
+                </tr>
+              ))}
+
+            </tbody>
+          </table>
+        </div>
+
+
+
+
     </>
   );
 }
