@@ -40,7 +40,7 @@
   padding: 20px;
   border-top: 10mm chocolate;
   border-right: 1px solid #6d6d6d;
-  background-color: #f1f1f16e;
+  background-color: #f1f1f1;
   /* Agregar un borde derecho */
 }
 
@@ -74,13 +74,14 @@
   /* Color del texto del encabezado del módulo */
   border-radius: 5px;
   /* Bordes redondeados */
-  border: 2px solid #6d6d6d;
+  border: 2px solid #8b8b8b;
   font-size: 15px;
   /* Cambia el tamaño de fuente a 18px */
 }
 
+
 .module-heading.selected {
-  background-color: #ff000079;
+  background-color: #ede3e3;
 }
 
 .options {
@@ -98,7 +99,7 @@
 
 .options li {
   padding: 5px;
-  background-color: #ffffff;
+  background-color: #fff9f9;;
   color: rgb(0, 0, 0);
   border-radius: 5px;
   border: 2px solid #6d6d6d;
@@ -109,7 +110,7 @@
 
 .options li:hover,
 .options li.selected {
-  background-color: rgba(255, 0, 0, 0.329);
+  background-color:#ede3e3
 }
 
 .usuario {

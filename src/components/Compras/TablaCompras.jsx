@@ -45,9 +45,6 @@ function TablaCompras() {
     }
   };
 
-
-
-
   useLayoutEffect(() => {
     if (tableRef.current && !isLoading) {
       if ($.fn.DataTable.isDataTable(tableRef.current)) {
@@ -136,9 +133,9 @@ function TablaCompras() {
         <h1 id="titulo">Compras</h1>
         <div className="botones">
           <Link to={'/registrarCompra'}>
-            <button className="boton rojovivo" id="botonagr"> <i className=".fa-solid fa-plus"></i> Agregar</button>
+            <button className="boton vinotintov2" id="botonagr"> <i className=".fa-solid fa-plus"></i> Agregar</button>
           </Link>
-          <button className="boton vinotintov2"><i className="fa-solid fa-file-pdf" ></i> Generar reporte</button>
+          <button style={{backgroundColor: "#1F67B9", color: "white"}} className="boton descargar"><i className="fa-solid fa-download"  > </i></button>
 
         </div>
       </div>
@@ -147,13 +144,13 @@ function TablaCompras() {
           <table className="display" style={{ width: "100%" }} ref={tableRef}>
             <thead style={{ backgroundColor: "red" }}>
               <tr>
-                <th><i className={["fa-solid fa-key iconosRojos"]}></i> ID</th>
-                <th> <i className={["fa-solid fa-font iconosRojos"]}></i> Nombre</th>
-                <th> <i className={["fa-solid fa-calendar-days iconosRojos"]}></i> Fecha</th>
-                <th> <i className={["fa-solid fa-coins iconosRojos"]}></i> Total</th>
-                <th> <i className={["fa-solid fa-user iconosRojos"]}></i> ID Proveedor</th>
-                <th> <i className={["fa-solid fa-lightbulb iconosRojos"]}></i> Estado</th>
-                <th> <i className={["fa-solid fa-gear iconosRojos"]}></i> Funciones</th>
+                <th style={{ textAlign: 'center' }}> <i className={["fa-solid fa-key iconosRojos"]}></i> ID</th>
+                <th style={{ textAlign: 'center' }}> <i className={["fa-solid fa-font iconosRojos"]}></i> Nombre</th>
+                <th style={{ textAlign: 'center' }}> <i className={["fa-solid fa-calendar-days iconosRojos"]}></i> Fecha</th>
+                <th style={{ textAlign: 'center' }}> <i className={["fa-solid fa-coins iconosRojos"]}></i> Total</th>
+                <th style={{ textAlign: 'center' }}> <i className={["fa-solid fa-user iconosRojos"]}></i> ID Proveedor</th>
+                <th style={{ textAlign: 'center' }}> <i className={["fa-solid fa-lightbulb iconosRojos"]}></i> Estado</th>
+                <th style={{ textAlign: 'center' }}> <i className={["fa-solid fa-gear iconosRojos"]}></i> Funciones</th>
               </tr>
             </thead>
             <tbody>
@@ -161,21 +158,21 @@ function TablaCompras() {
                 <tr key={compra.id_compra} style={{ backgroundColor: "white", color: "black" }}>
                   <td style={{ textAlign: 'center' }}>{compra.id_compra}</td>
                   <td style={{ textAlign: 'center' }}>{compra.nombre_compra}</td>
-                  <td style={{ textAlign: 'center' }}>{compra.fecha_compra}</td>
+                  <td style={{ textAlign: 'center' }}>{new Date(compra.fecha_compra).toLocaleDateString('es-ES')}</td>
                   <td style={{ textAlign: 'center' }}>{compra.total_compra}</td>
                   <td style={{ textAlign: 'center' }}>{compra.id_proveedor}</td>
-                  <td onClick={() => handleEstadoCompra(compra.id_compra, compra.estado_compra, compra)} style={{ cursor: 'pointer', textAlign: 'center', fontSize: '24px' }}>
+                  <td onClick={() => handleEstadoCompra(compra.id_compra, compra.estado_compra, compra)} style={{ cursor: 'pointer', textAlign: 'center', fontSize: '30px' }}>
                     {compra.estado_compra === 1 ? (
-                      <i className="bi bi-toggle-on" style={{ color: "green" }}></i>
+                      <i className="bi bi-toggle-on" style={{ color: "#1F67B9" }}></i>
                     ) : (
-                      <i className="bi bi-toggle-off" style={{ color: "red" }}></i>
+                      <i className="bi bi-toggle-off" style={{ color: "black" }}></i>
                     )}
                   </td>
 
                   <td>
                     <center>
                       <button className="boton" style={{ backgroundColor: "white" }} onClick={() => handleDeleteCompra(compra.id_compra)}>
-                        <i className="fas fa-trash iconosRojos"></i>
+                        <i className="fas fa-trash" style={{ color: "gray" }}></i>
                       </button>
                     </center>
                   </td>

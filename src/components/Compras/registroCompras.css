@@ -57,11 +57,11 @@
 
 .botones {
   position: absolute;
-  margin-left: 87vh;
+  margin-left: 107vh;
   display: flex;
-  margin-top: -10px;
+  margin-top: 10px;
 
-  margin-bottom: 20px;
+
 
 
 }
@@ -101,7 +101,7 @@
   background: #48110d;
   color: white;
   height: 50px;
-  min-width: 180px;
+  min-width: 130px;
   margin-left: 20%;
   margin-bottom: 20px;
 }
@@ -449,11 +449,17 @@
   margin-top: 10px;
 }
 
+.descargar {
+margin-left: 100px;
+height: 40px;
+margin-top: 5px;
+}
+
 .rojovivo {
   background-color: #E12424;
   color: white;
   height: 50px;
-  width: 180px;
+  width: 130px;
   margin-left: 20%;
   margin-bottom: 20px;
 }
