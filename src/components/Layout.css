@@ -23,7 +23,7 @@
 
 
 .barraPrincipal {
-  background-color: #f1f1f16e;
+  background-color: #f1f1f1;
   color: rgb(255, 255, 255);
   border-right: 1;
   border: 1px solid #d3d3d3;
@@ -36,11 +36,13 @@
 .barraLateral {
   flex: 2;
   /* Ocupa 4/5 del ancho disponible */
+  
   background-color: rgb(255, 255, 255);
   padding: 20px;
   border-top: 10mm chocolate;
   border-right: 1px solid #6d6d6d;
-  background-color: #f1f1f1;
+
+  background-color: #f1f1f16e;
   /* Agregar un borde derecho */
 }
 

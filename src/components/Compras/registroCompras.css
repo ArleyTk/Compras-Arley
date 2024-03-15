@@ -1,20 +1,20 @@
+
 .contenido2 {
-  border-radius: 5px;
+
   border: 1px solid #b9b9b9;
   margin-left: 50px;
-  margin-right: 50px;
-  background-color: #f2f2f2;
+
+
+  margin-bottom: 50px;
+  background-color: #f0f0f0;
 
 }
+
+
 
 #contenedorcito {
   display: flex;
   justify-content: center;
-  
-  
-
-  
-
 }
 
 .input-container {
@@ -60,7 +60,7 @@
   margin-left: 107vh;
   display: flex;
   margin-top: 10px;
-
+  min-width: 130px;
 
 
 
@@ -70,18 +70,9 @@
   margin-top: 50px;
   display: flex;
   justify-content: center;
+  min-width: 130px;
 }
 
-.cajaBotones button {
-  padding: 10px 40px;
-  /* Ajusta el padding para hacer los botones más largos */
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 200px;
-  height: 50px;
-  /* Ajusta el ancho de los botones */
-}
 
 .vinotinto {
   background: #48110d;
@@ -93,12 +84,38 @@
 
 }
 
+.azulado {
+  background: #1F67B9;
+  color: white;
+  height: 50px;
+  min-width: 130px;
+  margin-left: 20%;
+  margin-bottom: 20px;
+}
+
+.gris {
+  background: rgb(128, 128, 128);
+  color: white;
+  height: 50px;
+  min-width: 130px;
+  margin-left: 20%;
+  margin-bottom: 20px;
+}
+
+.gris:hover {
+  background: rgb(146, 146, 146);
+}
+
+.gris:active {
+  box-shadow: 1px 1px 1px 1px rgb(146, 146, 146);
+}
+
 .vinotinto:active {
   box-shadow: 1px 1px 1px 1px #771d17;
 }
 
 .vinotintov2 {
-  background: #48110d;
+  background: #1F67B9;
   color: white;
   height: 50px;
   min-width: 130px;
@@ -162,6 +179,7 @@
 }
 .contenedor{
   max-width: 95%;
+  
 }
 
 .iconosRojos {
@@ -315,6 +333,18 @@
   /* Tamaño de fuente */
 
   font-weight: bold;
+  /* 
+  Negrita */
+}
+
+#titulo-2 {
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: start;
+  font-size: 25px;
+  /* Tamaño de fuente */
+  margin-left: 90px;
+
   /* Negrita */
 }
 

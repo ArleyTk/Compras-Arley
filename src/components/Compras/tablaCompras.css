@@ -1,0 +1,65 @@
+#titulo {
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: start;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.inicio {
+  display: flex;
+}
+
+.botones {
+  position: absolute;
+  margin-left: 107vh;
+  display: flex;
+  margin-top: 10px;
+}
+
+.azulado {
+  background: #1F67B9;
+  color: white;
+  height: 50px;
+  min-width: 130px;
+  margin-left: 20%;
+  margin-bottom: 20px;
+}
+
+.azulado:hover {
+  background: #3c77bb;
+}
+
+.azulado:active {
+  box-shadow: 1px 1px 1px 1px #3c77bb;
+}
+
+.gris {
+  background: rgb(128, 128, 128);
+  color: white;
+  height: 50px;
+  min-width: 130px;
+  margin-left: 20%;
+  margin-bottom: 20px;
+}
+
+.gris:hover {
+  background: rgb(146, 146, 146);
+}
+
+.gris:active {
+  box-shadow: 1px 1px 1px 1px rgb(146, 146, 146);
+}
+
+.vinotinto {
+  background: #48110d;
+  color: white;
+}
+
+.vinotinto:hover {
+  background: #771d17;
+}
+
+.vinotinto:active {
+  box-shadow: 1px 1px 1px 1px #771d17;
+}

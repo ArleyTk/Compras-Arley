@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
 import $ from 'jquery';
 import 'datatables.net-bs5';
-import './registroCompras.css';
+import './tablaCompras.css';
 import { Link } from "react-router-dom";
 
 
@@ -67,6 +67,14 @@ function TablaCompras() {
           },
           search: ''
         },
+        buttons: [
+          {
+            extend: 'collection',
+            className: 'btn-primary', // Aquí establece el color de los botones
+            text: 'Descargar',
+            buttons: ['copy', 'excel', 'pdf', 'csv', 'print']
+          }
+        ],
         initComplete: function () {
           $('.data-table-filter input').css({
             'width': '1000px',
@@ -79,10 +87,16 @@ function TablaCompras() {
           }).before('<i class="fa fa-search" style="position: relative; left: 10px; top: 20%; transform: translateY(180%);"></i>');
           // Ajustamos la posición del icono para que quede alineado verticalmente
           $('.dataTables_length').hide();
+  
+          // Establecer el color de los botones del paginado
+          $('.paginate_button').css('background-color', '#48110d !important'); // Añadir !important para prioridad
         }
       });
     }
   }, [compras, isLoading]);
+  
+  
+
 
 
   const fetchCompras = async () => {
@@ -127,30 +141,31 @@ function TablaCompras() {
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" />
       <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
-      <link href="https://cdn.datatables.net/2.0.2/css/dataTables.semanticui.css" rel="stylesheet" />
       <link href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.2/semantic.min.css" rel="stylesheet" />
+      <link href="https://cdn.datatables.net/2.0.2/css/dataTables.semanticui.css" rel="stylesheet" />
+      
       <div className='inicio'>
         <h1 id="titulo">Compras</h1>
         <div className="botones">
           <Link to={'/registrarCompra'}>
-            <button className="boton vinotintov2" id="botonagr"> <i className=".fa-solid fa-plus"></i> Agregar</button>
+            <button className="boton azulado"> <i className=".fa-solid fa-plus"></i> Agregar</button>
           </Link>
-          <button style={{backgroundColor: "#1F67B9", color: "white"}} className="boton descargar"><i className="fa-solid fa-download"  > </i></button>
+          <button style={{ color: "white"}} className="boton descargar vinotinto"><i className="fa-solid fa-download"  > </i></button>
 
         </div>
       </div>
 
-        <div className="tabla">
+        <div>
           <table className="display" style={{ width: "100%" }} ref={tableRef}>
-            <thead style={{ backgroundColor: "red" }}>
+            <thead>
               <tr>
-                <th style={{ textAlign: 'center' }}> <i className={["fa-solid fa-key iconosRojos"]}></i> ID</th>
-                <th style={{ textAlign: 'center' }}> <i className={["fa-solid fa-font iconosRojos"]}></i> Nombre</th>
-                <th style={{ textAlign: 'center' }}> <i className={["fa-solid fa-calendar-days iconosRojos"]}></i> Fecha</th>
-                <th style={{ textAlign: 'center' }}> <i className={["fa-solid fa-coins iconosRojos"]}></i> Total</th>
-                <th style={{ textAlign: 'center' }}> <i className={["fa-solid fa-user iconosRojos"]}></i> ID Proveedor</th>
-                <th style={{ textAlign: 'center' }}> <i className={["fa-solid fa-lightbulb iconosRojos"]}></i> Estado</th>
-                <th style={{ textAlign: 'center' }}> <i className={["fa-solid fa-gear iconosRojos"]}></i> Funciones</th>
+                <th style={{ textAlign: 'center' }}> ID</th>
+                <th style={{ textAlign: 'center' }}> Nombre</th>
+                <th style={{ textAlign: 'center' }}> Fecha</th>
+                <th style={{ textAlign: 'center' }}> Total</th>
+                <th style={{ textAlign: 'center' }}> ID Proveedor</th>
+                <th style={{ textAlign: 'center' }}> Estado</th>
+                <th style={{ textAlign: 'center' }}> Funciones</th>
               </tr>
             </thead>
             <tbody>
@@ -163,7 +178,7 @@ function TablaCompras() {
                   <td style={{ textAlign: 'center' }}>{compra.id_proveedor}</td>
                   <td onClick={() => handleEstadoCompra(compra.id_compra, compra.estado_compra, compra)} style={{ cursor: 'pointer', textAlign: 'center', fontSize: '30px' }}>
                     {compra.estado_compra === 1 ? (
-                      <i className="bi bi-toggle-on" style={{ color: "#1F67B9" }}></i>
+                      <i className="bi bi-toggle-on" style={{ color: "#48110d" }}></i>
                     ) : (
                       <i className="bi bi-toggle-off" style={{ color: "black" }}></i>
                     )}
