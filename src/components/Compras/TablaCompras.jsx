@@ -3,7 +3,7 @@ import $ from 'jquery';
 import 'datatables.net-bs5';
 import './tablaCompras.css';
 import { Link } from "react-router-dom";
-
+import Swal from 'sweetalert2';
 
 function TablaCompras() {
   const [compras, setCompras] = useState([]);
@@ -21,28 +21,40 @@ function TablaCompras() {
   }, [compras]);
 
   const handleEstadoCompra = async (idCompra, estadoCompra, compra) => {
-    try {
-      const nuevoEstadoCompra = estadoCompra === 1 ? 2 : 1;
-      const response = await fetch(`http://localhost:8082/compras/compras/${idCompra}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          ...compra, // Mantener todos los datos de la compra
-          estado_compra: nuevoEstadoCompra // Cambiar solo el estado de la compra
-        })
-      });
+    Swal.fire({
+      title: '¿Desea cambiar el estado de la compra?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: 'gray', // Remove one of the duplicate definitions
+      confirmButtonText: 'Sí',
+      cancelButtonText: 'No'
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        try {
+          const nuevoEstadoCompra = estadoCompra === 1 ? 2 : 1;
+          const response = await fetch(`http://localhost:8082/compras/compras/${idCompra}`, {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              ...compra, // Mantener todos los datos de la compra
+              estado_compra: nuevoEstadoCompra // Cambiar solo el estado de la compra
+            })
+          });
+  
+          if (response.ok) {
+            fetchCompras();
 
-      if (response.ok) {
-        // Actualización exitosa, actualizar la lista de compras
-        fetchCompras();
-      } else {
-        console.error('Error al actualizar el estado de la compra');
+          } else {
+            console.error('Error al actualizar el estado de la compra');
+          }
+        } catch (error) {
+          console.error('Error al actualizar el estado de la compra:', error);
+        }
       }
-    } catch (error) {
-      console.error('Error al actualizar el estado de la compra:', error);
-    }
+    });
   };
 
   useLayoutEffect(() => {
@@ -55,7 +67,7 @@ function TablaCompras() {
         paging: true,
         searching: true,
         ordering: true,
-        lengthChange: true,
+        lengthChange: false,
         info: false,
         dom: '<"data-table-filter"f>tpil',
         language: {
@@ -94,10 +106,6 @@ function TablaCompras() {
       });
     }
   }, [compras, isLoading]);
-  
-  
-
-
 
   const fetchCompras = async () => {
     try {
@@ -155,52 +163,39 @@ function TablaCompras() {
         </div>
       </div>
 
-        <div>
-          <table className="display" style={{ width: "100%" }} ref={tableRef}>
-            <thead>
-              <tr>
-                <th style={{ textAlign: 'center' }}> ID</th>
-                <th style={{ textAlign: 'center' }}> Nombre</th>
-                <th style={{ textAlign: 'center' }}> Fecha</th>
-                <th style={{ textAlign: 'center' }}> Total</th>
-                <th style={{ textAlign: 'center' }}> ID Proveedor</th>
-                <th style={{ textAlign: 'center' }}> Estado</th>
-                <th style={{ textAlign: 'center' }}> Funciones</th>
+      <div>
+        <table className="display" style={{ width: "100%" }} ref={tableRef}>
+          <thead>
+            <tr>
+              <th style={{ textAlign: 'center' }}> ID</th>
+              <th style={{ textAlign: 'center' }}> Número</th>
+              <th style={{ textAlign: 'center' }}> Fecha</th>
+              <th style={{ textAlign: 'center' }}> Total</th>
+              <th style={{ textAlign: 'center' }}> ID Proveedor</th>
+              <th style={{ textAlign: 'center' }}> Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            {compras.map(compra => (
+              <tr key={compra.id_compra} style={{ backgroundColor: "white", color: "black" }}>
+                <td style={{ textAlign: 'center' }}>{compra.id_compra}</td>
+                <td style={{ textAlign: 'center' }}>{compra.numero_compra}</td>
+                <td style={{ textAlign: 'center' }}>{new Date(compra.fecha_compra).toLocaleDateString('es-ES')}</td>
+                <td style={{ textAlign: 'center' }}>{compra.total_compra}</td>
+                <td style={{ textAlign: 'center' }}>{compra.nombre_proveedor}</td>
+                <td onClick={() => handleEstadoCompra(compra.id_compra, compra.estado_compra, compra)} style={{ cursor: 'pointer', textAlign: 'center', fontSize: '30px' }}>
+                  {compra.estado_compra === 1 ? (
+                    <i className="bi bi-toggle-on" style={{ color: "#48110d" }}></i>
+                  ) : (
+                    <i className="bi bi-toggle-off" style={{ color: "black" }}></i>
+                  )}
+                </td>
               </tr>
-            </thead>
-            <tbody>
-              {compras.map(compra => (
-                <tr key={compra.id_compra} style={{ backgroundColor: "white", color: "black" }}>
-                  <td style={{ textAlign: 'center' }}>{compra.id_compra}</td>
-                  <td style={{ textAlign: 'center' }}>{compra.nombre_compra}</td>
-                  <td style={{ textAlign: 'center' }}>{new Date(compra.fecha_compra).toLocaleDateString('es-ES')}</td>
-                  <td style={{ textAlign: 'center' }}>{compra.total_compra}</td>
-                  <td style={{ textAlign: 'center' }}>{compra.id_proveedor}</td>
-                  <td onClick={() => handleEstadoCompra(compra.id_compra, compra.estado_compra, compra)} style={{ cursor: 'pointer', textAlign: 'center', fontSize: '30px' }}>
-                    {compra.estado_compra === 1 ? (
-                      <i className="bi bi-toggle-on" style={{ color: "#48110d" }}></i>
-                    ) : (
-                      <i className="bi bi-toggle-off" style={{ color: "black" }}></i>
-                    )}
-                  </td>
+            ))}
 
-                  <td>
-                    <center>
-                      <button className="boton" style={{ backgroundColor: "white" }} onClick={() => handleDeleteCompra(compra.id_compra)}>
-                        <i className="fas fa-trash" style={{ color: "gray" }}></i>
-                      </button>
-                    </center>
-                  </td>
-                </tr>
-              ))}
-
-            </tbody>
-          </table>
-        </div>
-
-
-
-
+          </tbody>
+        </table>
+      </div>
     </>
   );
 }

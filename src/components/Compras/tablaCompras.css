@@ -3,7 +3,7 @@
   display: flex;
   justify-content: start;
   font-size: 25px;
-  font-weight: bold;
+ 
 }
 
 .inicio {
@@ -16,6 +16,17 @@
   display: flex;
   margin-top: 10px;
 }
+
+.table-with-margin {
+  margin-right: 20px;
+}
+
+
+.descargar {
+  margin-left: 100px;
+  height: 40px;
+  margin-top: 5px;
+  }
 
 .azulado {
   background: #1F67B9;
