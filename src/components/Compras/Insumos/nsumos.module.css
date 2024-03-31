@@ -1,0 +1,274 @@
+.botonsito {
+    display: flex;
+    margin-left: auto;
+    padding: 50px 50px;
+}
+
+.botonAgregar {
+    background-color: #E12424;
+    color: white;
+    height: 50px;
+    width: 180px;
+    margin-left: 70%;
+}
+
+.botonRojo {
+    background-color: #E12424;
+    color: white;
+    height: 50px;
+    width: 180px;
+    margin-left: 20%;
+    margin-bottom: 20px;
+}
+
+.botonMorado {
+    background-color: #722F37;
+    color: white;
+    height: 50px;
+    width: 180px;
+    margin-left: 20%;
+    margin-bottom: 20px;
+}
+
+.checkbox {
+    margin-right: 10px;
+}
+
+.azulado3 {
+    background: #1F67B9;
+    color: white;
+    height: 55px;
+    max-width: 120px;
+    min-width: 120px;
+    margin-left: 20%;
+    margin-top: 0px;
+  }
+  
+  .azulado3:hover {
+    background: #3c77bb;
+  }
+  
+  .azulado3:active {
+    box-shadow: 1px 1px 1px 1px #3c77bb;
+  }
+  
+  .gris {
+    background: rgb(128, 128, 128);
+    min-width: 120px;
+  
+  }
+  
+  .gris:hover {
+    background: rgb(146, 146, 146);
+  }
+  
+  .gris:active {
+    box-shadow: 1px 1px 1px 1px rgb(146, 146, 146);
+  }
+
+.cajaBotones {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.cajaBotones button {
+    padding: 10px 40px;
+    /* Ajusta el padding para hacer los botones más largos */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 20%;
+    /* Ajusta el ancho de los botones */
+}
+
+#guardar {
+    background-color: #48110d;
+    color: white;
+}
+
+#cancelar {
+    background-color: #E12424;
+    color: white;
+}
+
+
+.espacioEntreBotones {
+    width: 40px;
+    /* Ajusta el ancho del espacio según tus preferencias */
+}
+
+.gris {
+    color: #6d6d6d;
+}
+
+.parrafoGris {
+    color: gray;
+}
+
+input {
+    border-radius: 3px;
+    border: 1px solid #6d6d6d;
+}
+
+.input1 input {
+    padding-left: 10px;
+    width: 300px;
+    height: 50px;
+}
+
+
+.input1 i {
+    font-size: 20px;
+}
+
+.divImagen {
+    border-radius: 10px;
+    border: 1px solid #6d6d6d;
+    padding: 20px;
+    background-color: #ffffff;
+    margin-top: -70px;
+}
+
+.contenido2 {
+    border-radius: 3px;
+
+    margin-left: 20px;
+    margin-right: 20px;
+
+}
+
+#_id {
+    background-color: #ccc;
+}
+
+
+.rojo {
+    background: #E12424;
+    color: white;
+
+}
+
+.rojo:hover {
+    background: #f33928;
+}
+
+.rojo:active {
+    box-shadow: 1px 1px 1px 1px #f33928;
+}
+
+.vinotinto {
+    background: #48110d;
+    color: white;
+}
+
+.vinotinto:hover {
+    background: #771d17;
+
+}
+
+.vinotinto:active {
+    box-shadow: 1px 1px 1px 1px #771d17;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-left: 50px;
+}
+
+.icon {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.key-icon::before {
+    content: "\f084";
+    /* Unicode for key icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+.user-icon::before {
+    content: "\f007";
+    /* Unicode for user icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+.input-field {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 400px;
+
+}
+
+#contenedorsitos {
+    display: flex;
+}
+
+#contenedorsito {
+    margin-top: -50px;
+
+}
+
+#cosas {
+    margin-left: 60px;
+
+}
+
+.contIzquierdaAbajo {
+    margin-top: -35px;
+}
+
+.invalid {
+    border: 1px solid #E12424;
+    box-shadow: 0 0 1px red;
+    outline: none;
+}
+
+.error {
+    color: #E12424;
+    display: block;
+    font-size: 12px;
+
+}
+
+label {
+    display: block;
+    /* Hace que el label sea un elemento en bloque para que aparezca por encima del input */
+    margin-bottom: 10px;
+    /* Agrega un margen inferior para separar el label del input */
+}
+
+/* Estilos para el botón de eliminar */
+.boton {
+    background-color: transparent;
+    /* Establece el fondo del botón como transparente */
+    border: none;
+    /* Elimina el borde del botón */
+    cursor: pointer;
+    /* Cambia el cursor al pasar sobre el botón */
+}
+
+.boton:hover {
+    background-color: transparent;
+    /* Establece el fondo del botón como transparente al pasar sobre él */
+}
+
+.tabla{
+    border-collapse: collapse;
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.busqueda{
+    height: 30px;
+    border-radius: 20px;
+    width: 500px;
+    margin-top: 20px;
+}

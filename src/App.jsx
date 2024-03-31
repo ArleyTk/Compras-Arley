@@ -12,8 +12,14 @@ import Usuarios from './components/Usuarios/Usuarios';
 import Roles from './components/Configuracion/Roles';
 import AgregarRoles from './components/Configuracion/AgregarRoles';
 import AgregarUsuarios from './components/Usuarios/AgregarUsuarios';
-import RegistrarCompra from './components/Compras/RegistrarCompra';
-import TablaCompras from './components/Compras/TablaCompras';
+import RegistrarCompra from './components/Compras/Compras/RegistrarCompra';
+import TablaCompras from './components/Compras/Compras/TablaCompras';
+import TablaProveedores from './components/Compras/Proveedores/TablaProveedores';
+import TablaInsumos from './components/Compras/Insumos/TablaInsumos';
+import RegistrarInsumo from './components/Compras/Insumos/RegistrarInsumo';
+import EditarInsumo from './components/Compras/Insumos/EditarInsumo';
+import TablaCatInsumos from './components/Compras/Cat-Insumos/TablaCatInsumos';
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -32,6 +38,12 @@ function App() {
           <Route path="/agregarRoles" element={<AgregarRoles />}/>
           <Route path="/RegistrarCompra" element={<RegistrarCompra />}/>
           <Route path="/Compra" element={<TablaCompras />}/>
+          <Route path="/Proveedores" element={<TablaProveedores />}/>
+          <Route path="/Insumos" element={<TablaInsumos />}/>
+          <Route path="/CatInsumos" element={<TablaCatInsumos />}/>
+          <Route path="/RegistrarInsumo" element={<RegistrarInsumo />}/>
+          <Route path="/EditarInsumo/:id_insumo" element={<EditarInsumo />}/>
+
           <Route path="*" element={<Default />}/>
         </Route>
       </Routes>

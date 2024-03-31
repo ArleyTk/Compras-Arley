@@ -26,6 +26,18 @@ const Layout = () => {
     return (
         <div>
             <div className="barraPrincipal">
+            <ul className="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
                 <div className="contenedor_1">
                     <img src="/archivos/imagenes/LuchoGod.png" height="45px" length="45px" alt="Logo" />
                     <p id="luchosoft">LuchoSoft</p>
@@ -64,9 +76,15 @@ const Layout = () => {
                             </p>
                             <ul className={`options ${selectedModule === "Compras" ? "active" : ""}`}>
                              
+                            <Link to="/CatInsumos">
                                 <li>Categoria de insumos</li>
+                                </Link>
+                                <Link to="/Insumos">
                                 <li>Insumos</li>
+                                </Link>
+                                <Link to="/Proveedores">
                                 <li>Proveedores</li>
+                                </Link>
                                 <Link to="/Compra">
                                 <li>Compras</li>
                                 </Link>
